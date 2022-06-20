@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2022-06-19T23:16:47.280-07:00
+  initializedAtString: 2022-06-19T19:39:14.398-07:00
+  log:
+  - commitID: b7ef3701c144e172dbbb0c9f2a11737c56bd1437
+    mergeA: 
+    mergeB: 
+    authorName: James Yim
+    authorEmail: jnyim@ucsc.edu
+    commitEmail: jnyim@ucsc.edu
+    commitName: James Yim
+    summary: Finished AutoClicker
+    description: 
+    timeString: 2022-05-15T23:34:14.000-07:00
+    commitTimeString: 2022-05-15T23:34:14.000-07:00
+    changes:
+    - path: AutoClicker\Clicker.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\AutoClicker\Clicker.py
+      projectPath: ..\AutoClicker\Clicker.py
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: fe9de9c73b05b9a5f00add814db3fa3fc89736f3
+    mergeA: 
+    mergeB: 
+    authorName: James Yim
+    authorEmail: jnyim@ucsc.edu
+    commitEmail: jnyim@ucsc.edu
+    commitName: James Yim
+    summary: Starting autoClicker
+    description: 
+    timeString: 2022-05-15T03:40:28.000-07:00
+    commitTimeString: 2022-05-15T03:40:28.000-07:00
+    changes:
+    - path: AutoClicker\Clicker.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\AutoClicker\Clicker.py
+      projectPath: ..\AutoClicker\Clicker.py
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: AutoClicker\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\AutoClicker\README.md
+      projectPath: ..\AutoClicker\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 58c564c3b91dbc2bf93c43a769fba4d79aac3593
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Updated README
+    description: 
+    timeString: 2022-05-13T01:56:45.000-07:00
+    commitTimeString: 2022-05-13T01:56:45.000-07:00
+    changes:
+    - path: Wordle\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\README.md
+      projectPath: ..\Wordle\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 65728b3911d406909e8da7a941da911169bbb176
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Updated README
+    description: 
+    timeString: 2022-05-13T01:55:28.000-07:00
+    commitTimeString: 2022-05-13T01:55:28.000-07:00
+    changes:
+    - path: Wordle\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\README.md
+      projectPath: ..\Wordle\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: e6fe1fc776bdc3cad3bca256571519b1e8c90c05
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Updated README
+    description: 
+    timeString: 2022-05-13T01:53:47.000-07:00
+    commitTimeString: 2022-05-13T01:53:47.000-07:00
+    changes:
+    - path: Wordle\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\README.md
+      projectPath: ..\Wordle\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: b99b2c9248a2b823a6096ec86a024bfb95c186e0
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Added code comments
+    description: 
+    timeString: 2022-05-13T01:45:33.000-07:00
+    commitTimeString: 2022-05-13T01:45:33.000-07:00
+    changes:
+    - path: Wordle\wordle.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\wordle.py
+      projectPath: ..\Wordle\wordle.py
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: b7fcd749b87d2db81cfd8718d8e6795e03b279a2
+    mergeA: da1044de53657406c4a1357ed031de77b24ce96e
+    mergeB: 9c08fb3f780a5c7941cee45536b8132bb1064c1f
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Updated Readme
+    description: 
+    timeString: 2022-05-13T01:21:32.000-07:00
+    commitTimeString: 2022-05-13T01:21:32.000-07:00
+    changes: []
+  - commitID: da1044de53657406c4a1357ed031de77b24ce96e
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Removed test prints
+    description: 
+    timeString: 2022-05-13T01:19:52.000-07:00
+    commitTimeString: 2022-05-13T01:19:52.000-07:00
+    changes:
+    - path: Wordle\wordle.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\wordle.py
+      projectPath: ..\Wordle\wordle.py
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 9c08fb3f780a5c7941cee45536b8132bb1064c1f
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Update README.md
+    description: 
+    timeString: 2022-05-13T01:14:13.000-07:00
+    commitTimeString: 2022-05-13T01:14:13.000-07:00
+    changes:
+    - path: Wordle\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\README.md
+      projectPath: ..\Wordle\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 5edc60144eb89cf98c206c6971f5894792a0fa3c
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Finished Wordle
+    description: 
+    timeString: 2022-05-13T01:12:45.000-07:00
+    commitTimeString: 2022-05-13T01:12:45.000-07:00
+    changes:
+    - path: Wordle\README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\README.md
+      projectPath: ..\Wordle\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Wordle\wordle.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\wordle.py
+      projectPath: ..\Wordle\wordle.py
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 492b0ff1117c2a300e4d847301a9ac5af015b663
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Deleted test.txt
+    description: 
+    timeString: 2022-05-12T21:26:23.000-07:00
+    commitTimeString: 2022-05-12T21:26:23.000-07:00
+    changes:
+    - path: test.txt
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\test.txt
+      projectPath: ..\test.txt
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 73fc59d75728616552e49288d55a6f65c7c1d2a5
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Deleted ImBoredInLongBeach
+    description: 
+    timeString: 2022-05-12T20:45:26.000-07:00
+    commitTimeString: 2022-05-12T20:45:26.000-07:00
+    changes:
+    - path: ImBoredInLongBeach
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\ImBoredInLongBeach
+      projectPath: ..\ImBoredInLongBeach
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+  - commitID: 1177d0a915bd27a1403b14a99223fddb4cf21d88
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: Added a readme thing
+    description: 
+    timeString: 2022-05-12T20:44:51.000-07:00
+    commitTimeString: 2022-05-12T20:44:51.000-07:00
+    changes:
+    - path: README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 3419b99ab42fc3607be4b1c50491d5b4dfa5ac58
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitName: JamesNYim
+    summary: First files
+    description: 
+    timeString: 2022-05-12T20:29:12.000-07:00
+    commitTimeString: 2022-05-12T20:29:12.000-07:00
+    changes:
+    - path: ImBoredInLongBeach
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\ImBoredInLongBeach
+      projectPath: ..\ImBoredInLongBeach
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Wordle\wordle.py
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\Wordle\wordle.py
+      projectPath: ..\Wordle\wordle.py
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: test.txt
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\test.txt
+      projectPath: ..\test.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 3fcca7e754b94e5a0b2f878467345b352ecedb15
+    mergeA: 
+    mergeB: 
+    authorName: JamesNYim
+    authorEmail: 101849565+JamesNYim@users.noreply.github.com
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Initial commit
+    description: 
+    timeString: 2022-05-12T20:19:24.000-07:00
+    commitTimeString: 2022-05-12T20:19:24.000-07:00
+    changes:
+    - path: README.md
+      fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-boba-shop\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
