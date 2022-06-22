@@ -10,7 +10,6 @@ ScriptsOnlyBuild:
     - GitHub.Unity.GitLocksCache
     - GitHub.Unity.GitLogCache
     - GitHub.Unity.GitStatusCache
-    - GitHub.Unity.GitUserCache
     - GitHub.Unity.RepositoryInfoCache
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -62,29 +61,29 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11226}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11568}
     - Class: 114
-      Script: {instanceID: 12170}
+      Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13372}
     - Class: 114
-      Script: {instanceID: 13228}
+      Script: {instanceID: 13390}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 13686}
     - Class: 114
-      Script: {instanceID: 13590}
+      Script: {instanceID: 13756}
     - Class: 114
-      Script: {instanceID: 13624}
+      Script: {instanceID: 13790}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14070}
     - Class: 114
-      Script: {instanceID: 14234}
+      Script: {instanceID: 14412}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -587,5 +586,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/RollingScene.unity
-  playerPath: C:/Users/nop90/Desktop/the-boba-shop/the-boba-shop/GachaGachaGame/My
+  playerPath: C:/Users/nop90/Desktop/the-boba-shop/the-coffee-shop/GachaGachaGame/My
     project.exe

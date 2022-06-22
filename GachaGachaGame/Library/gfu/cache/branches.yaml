@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2022-06-19T23:18:39.505-07:00
-  initializedAtString: 2022-06-19T19:39:28.588-07:00
-  localBranches:
-  - name: main
-    tracking: origin/main
+  lastUpdatedAtString: 2022-06-22T15:11:39.110-07:00
+  initializedAtString: 2022-06-22T15:11:39.080-07:00
+  localBranches: []
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
@@ -25,21 +23,15 @@ MonoBehaviour:
     tracking: '[None]'
   remotes:
   - name: origin
-    url: https://github.com/JamesNYim/the-boba-shop.git
+    url: git@github.com:JamesNYim/the-coffee-shop.git
     login: 
     user: 
     host: 
     function: 0
     token: 
   localConfigBranches:
-    keys:
-    - main
-    values:
-    - name: main
-      remote:
-        name: origin
-        url: https://github.com/JamesNYim/the-boba-shop.git
-      trackingBranch: main
+    keys: []
+    values: []
   remoteConfigBranches:
     keys:
     - origin
@@ -52,16 +44,16 @@ MonoBehaviour:
       - name: HEAD
         remote:
           name: origin
-          url: https://github.com/JamesNYim/the-boba-shop.git
+          url: git@github.com:JamesNYim/the-coffee-shop.git
         trackingBranch: 
       - name: main
         remote:
           name: origin
-          url: https://github.com/JamesNYim/the-boba-shop.git
+          url: git@github.com:JamesNYim/the-coffee-shop.git
         trackingBranch: 
   configRemotes:
     keys:
     - origin
     values:
     - name: origin
-      url: https://github.com/JamesNYim/the-boba-shop.git
+      url: git@github.com:JamesNYim/the-coffee-shop.git

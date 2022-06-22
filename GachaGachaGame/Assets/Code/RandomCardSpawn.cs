@@ -15,10 +15,13 @@ public class cardObject
     private float nextSpawnTime;
     public float displayRate;
     public float endRollAnimationTime;
+    private float currentTime;
 
     private bool isRolling = false;
     private bool hasRolled = false;
     public cardObject[] cardToSpawn;
+    private GameObject droppedCard;
+    private GameObject droppedCardPrefab;
 
     void cardDropRates()
     {
@@ -52,15 +55,16 @@ public class cardObject
                 GameObject card = currentCard.card;
 
                 //Creating the object in the game
-                GameObject cardObject = new GameObject("cardObject");
-                cardObject.transform.position = new Vector3(0, 0, 0);
-                cardObject.transform.parent = transform;
+                GameObject droppedCard = new GameObject("cardObject");
+                droppedCard.transform.position = new Vector3(0, 0, 0);
+                droppedCard.transform.parent = transform;
 
                 //Displaying the card
-                GameObject cardPrefab = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, transform);
-                cardPrefab.name = ("cardPrefab");
+                droppedCardPrefab = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, transform);
+                droppedCardPrefab.name = ("cardPrefab");
             }
         }
+
     }  
 
     void rollDisplay()
@@ -101,7 +105,10 @@ public class cardObject
 
     public void rolling()
     {
+    
         isRolling = true;
+        currentTime = endRollAnimationTime;
+        hasRolled = false;
     }
     
     void Start()
@@ -109,13 +116,14 @@ public class cardObject
         isRolling = false;
         hasRolled = false;
     }
+
     void Update()
     {
         
         if (isRolling)
         {
-            endRollAnimationTime -= Time.deltaTime;
-            if (endRollAnimationTime >= 0.0f)
+            currentTime -= Time.deltaTime;
+            if (currentTime >= 0.0f)
             {
                 if (nextSpawnTime < Time.time)
                 {
@@ -125,10 +133,17 @@ public class cardObject
             }
             else
             {
-                rollingCard();
+                hasRolled = true;
+                currentTime = endRollAnimationTime;
+                isRolling = false;
             }
-            //isRolling = false;
-
+        }
+        if (hasRolled)
+        {
+            Destroy(droppedCardPrefab);
+            Destroy(droppedCard);
+            rollingCard();
+            //hasRolled = false;
         }
         
     }

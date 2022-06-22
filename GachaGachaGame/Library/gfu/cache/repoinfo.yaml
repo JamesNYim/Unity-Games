@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2022-06-19T23:16:12.237-07:00
-  initializedAtString: 2022-06-19T19:39:14.373-07:00
+  lastUpdatedAtString: 2022-06-22T14:58:18.969-07:00
+  initializedAtString: 2022-06-22T14:58:18.969-07:00
   currentGitRemote:
     name: origin
-    url: https://github.com/JamesNYim/the-boba-shop.git
+    url: git@github.com:JamesNYim/the-coffee-shop.git
     login: 
     user: 
     host: 
@@ -30,9 +30,9 @@ MonoBehaviour:
     name: main
     remote:
       name: origin
-      url: https://github.com/JamesNYim/the-boba-shop.git
+      url: git@github.com:JamesNYim/the-coffee-shop.git
     trackingBranch: main
   currentConfigRemote:
     name: origin
-    url: https://github.com/JamesNYim/the-boba-shop.git
+    url: git@github.com:JamesNYim/the-coffee-shop.git
   currentHead: 
