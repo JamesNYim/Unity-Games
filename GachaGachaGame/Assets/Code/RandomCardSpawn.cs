@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 [System.Serializable]
 
@@ -12,16 +12,16 @@ public class cardObject
  public class RandomCardSpawn : MonoBehaviour
 {
     //Variables
-    private float nextSpawnTime;
     public float displayRate;
-    public float endRollAnimationTime;
-    private float currentTime;
-
-    private bool isRolling = false;
-    private bool hasRolled = false;
+    public float animationTime;
+    public float timeToDisplay;
+    private bool animationDone;
+    private bool hasRolled;
     public cardObject[] cardToSpawn;
-    private GameObject droppedCard;
     private GameObject droppedCardPrefab;
+    private GameObject droppedCard;
+
+    private GameObject card;
 
     void cardDropRates()
     {
@@ -41,110 +41,89 @@ public class cardObject
         }
     }
 
-    void rollingCard()
+    IEnumerator rollingCard()
     {
+        yield return new WaitForSeconds(timeToDisplay);
+        cardDropRates();
         //Getting a random percent number
         int random = Random.Range(0, 100);
-            
+        Debug.Log("randomNum: " + random);     
         for (int i = 0; i < cardToSpawn.Length; i++)
         {
+            Debug.Log("currentCard minDropRate: " + cardToSpawn[i].minDropRate); 
+            Debug.Log("currentCard maxDropRate: " + cardToSpawn[i].maxDropRate); 
             if (random >= cardToSpawn[i].minDropRate && random <= cardToSpawn[i].maxDropRate) //Checking which card is supposed to be spawned
             {
                 //Variables
-                cardObject currentCard = cardToSpawn[random];
+                cardObject currentCard = cardToSpawn[i];
                 GameObject card = currentCard.card;
+                Debug.Log("Card given: " + card.name);
 
                 //Creating the object in the game
-                GameObject droppedCard = new GameObject("cardObject");
-                droppedCard.transform.position = new Vector3(0, 0, 0);
-                droppedCard.transform.parent = transform;
+                card.transform.position = new Vector3(0, 0, 0);
 
                 //Displaying the card
                 droppedCardPrefab = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, transform);
                 droppedCardPrefab.name = ("cardPrefab");
             }
         }
+        hasRolled = true;
 
     }  
 
     void rollDisplay()
     {
-            int random = Random.Range(0, cardToSpawn.Length);
-            //Variables
-            cardObject currentCard = cardToSpawn[random];
-            GameObject card = currentCard.card;
+        
+      
+                int random = Random.Range(0, cardToSpawn.Length);
+                //Variables
+                cardObject currentCard = cardToSpawn[random];
+                GameObject card = currentCard.card;
 
-            //Creating the object in the game
-            GameObject cardObject = new GameObject("cardObject");
-            cardObject.transform.position = new Vector3(0, 0, 0);
-            cardObject.transform.parent = transform;
+                //Creating the object in the game
+                GameObject cardObject = new GameObject("cardObject");
+                cardObject.transform.position = new Vector3(0, 0, 0);
+                cardObject.transform.parent = transform;
 
-            //Displaying the card
-            GameObject cardPrefab = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, transform);
-            cardPrefab.name = ("cardPrefab");
+                //Displaying the card
+                GameObject cardPrefab = Instantiate(card, new Vector3(0, 0, 0), Quaternion.identity, transform);
+                cardPrefab.name = ("cardPrefab");
                     
-            //Destroying the card 
-            Destroy(cardObject, displayRate);
-            Destroy(cardPrefab, displayRate);  
+                //Destroying the card 
+                Destroy(cardObject, displayRate);
+                Destroy(cardPrefab, displayRate);
+                if (animationDone)
+                {
+                    CancelInvoke("rollDisplay");
+                }
+                
     }
 
-    bool rollAnimation()
+    IEnumerator rollAnimation()
     {
-        endRollAnimationTime -= Time.deltaTime;
-        if (endRollAnimationTime >= 0.0f)
-        {
-            if (nextSpawnTime < Time.time)
-            {
-                rollDisplay();
-                nextSpawnTime = Time.time + displayRate;
-            }
-        }
-        rollingCard();
-        return true;
+        hasRolled = false;
+        Debug.Log("Started stopAnimation at: " + Time.time);
+        yield return new WaitForSeconds(animationTime);
+        animationDone = true;
+        Debug.Log("Ended stopAnimation at: " + Time.time);
+        Debug.Log("givingCard at: " + Time.time);
+        StartCoroutine(rollingCard());
+        
     }
 
     public void rolling()
     {
-    
-        isRolling = true;
-        currentTime = endRollAnimationTime;
-        hasRolled = false;
-    }
-    
-    void Start()
-    {
-        isRolling = false;
-        hasRolled = false;
-    }
-
-    void Update()
-    {
-        
-        if (isRolling)
-        {
-            currentTime -= Time.deltaTime;
-            if (currentTime >= 0.0f)
-            {
-                if (nextSpawnTime < Time.time)
-                {
-                    rollDisplay();
-                    nextSpawnTime = Time.time + displayRate;
-                }
-            }
-            else
-            {
-                hasRolled = true;
-                currentTime = endRollAnimationTime;
-                isRolling = false;
-            }
-        }
         if (hasRolled)
         {
+            Destroy(card);
             Destroy(droppedCardPrefab);
-            Destroy(droppedCard);
-            rollingCard();
-            //hasRolled = false;
         }
         
+        Debug.Log("Rolling");
+        animationDone = false;
+        InvokeRepeating("rollDisplay", 0, displayRate);
+        StartCoroutine(rollAnimation());
     }
+    
+       
 }

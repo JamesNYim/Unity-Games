@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2022-06-22T15:11:39.110-07:00
-  initializedAtString: 2022-06-22T15:11:39.080-07:00
-  localBranches: []
+  lastUpdatedAtString: 2022-07-17T19:57:24.270-07:00
+  initializedAtString: 2022-07-17T13:43:35.087-07:00
+  localBranches:
+  - name: main
+    tracking: origin/main
   remoteBranches:
   - name: origin/HEAD
     tracking: '[None]'
@@ -30,8 +32,14 @@ MonoBehaviour:
     function: 0
     token: 
   localConfigBranches:
-    keys: []
-    values: []
+    keys:
+    - main
+    values:
+    - name: main
+      remote:
+        name: origin
+        url: git@github.com:JamesNYim/the-coffee-shop.git
+      trackingBranch: main
   remoteConfigBranches:
     keys:
     - origin
