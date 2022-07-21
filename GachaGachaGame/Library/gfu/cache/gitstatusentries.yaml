@@ -13,33 +13,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2022-07-19T17:09:17.268-07:00
-  initializedAtString: 2022-07-19T15:18:15.816-07:00
+  lastUpdatedAtString: 2022-07-20T21:31:07.155-07:00
+  initializedAtString: 2022-07-20T14:54:26.260-07:00
   entries:
-  - path: GachaGachaGame\Assets\Scenes\Inventory.unity
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Scenes\Inventory.unity
-    projectPath: Assets\Scenes\Inventory.unity
+  - path: GachaGachaGame\Assets\Code\Player.cs
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\Player.cs
+    projectPath: Assets\Code\Player.cs
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: GachaGachaGame\Assets\Scenes\Inventory.unity.meta
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Scenes\Inventory.unity.meta
-    projectPath: Assets\Scenes\Inventory.unity.meta
+  - path: GachaGachaGame\Assets\Code\Player.cs.meta
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\Player.cs.meta
+    projectPath: Assets\Code\Player.cs.meta
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
-  - path: GachaGachaGame\Assets\Scenes\RollingScene.unity
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Scenes\RollingScene.unity
-    projectPath: Assets\Scenes\RollingScene.unity
+  - path: GachaGachaGame\Assets\Code\PlayerData.cs
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\PlayerData.cs
+    projectPath: Assets\Code\PlayerData.cs
     originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: GachaGachaGame\Library\AnnotationManager
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\AnnotationManager
-    projectPath: Library\AnnotationManager
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: GachaGachaGame\Assets\Code\PlayerData.cs.meta
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\PlayerData.cs.meta
+    projectPath: Assets\Code\PlayerData.cs.meta
     originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: GachaGachaGame\Assets\Code\SaveSystem.cs
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\SaveSystem.cs
+    projectPath: Assets\Code\SaveSystem.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: GachaGachaGame\Assets\Code\SaveSystem.cs.meta
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\SaveSystem.cs.meta
+    projectPath: Assets\Code\SaveSystem.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
   - path: GachaGachaGame\Library\ArtifactDB
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\ArtifactDB
     projectPath: Library\ArtifactDB
@@ -82,9 +94,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: GachaGachaGame\Library\InspectorExpandedItems.asset
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\InspectorExpandedItems.asset
-    projectPath: Library\InspectorExpandedItems.asset
+  - path: GachaGachaGame\Library\LastSceneManagerSetup.txt
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\LastSceneManagerSetup.txt
+    projectPath: Library\LastSceneManagerSetup.txt
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -94,9 +106,21 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: GachaGachaGame\Library\ScriptAssemblies\Assembly-CSharp.dll
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\ScriptAssemblies\Assembly-CSharp.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: GachaGachaGame\Library\SourceAssetDB
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SourceAssetDB
     projectPath: Library\SourceAssetDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: GachaGachaGame\UserSettings\EditorUserSettings.asset
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\UserSettings\EditorUserSettings.asset
+    projectPath: UserSettings\EditorUserSettings.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
