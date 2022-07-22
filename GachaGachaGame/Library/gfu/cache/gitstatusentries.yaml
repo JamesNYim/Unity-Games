@@ -13,24 +13,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2022-07-21T12:15:54.859-07:00
+  lastUpdatedAtString: 2022-07-21T20:26:33.763-07:00
   initializedAtString: 2022-07-21T10:57:17.359-07:00
   entries:
   - path: GachaGachaGame\Assets\Code\Characters.cs
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\Characters.cs
     projectPath: Assets\Code\Characters.cs
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: GachaGachaGame\Assets\Code\Characters.cs.meta
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\Characters.cs.meta
-    projectPath: Assets\Code\Characters.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: GachaGachaGame\Assets\Scenes\Inventory.unity
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Scenes\Inventory.unity
-    projectPath: Assets\Scenes\Inventory.unity
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: GachaGachaGame\Assets\Code\SaveSystem.cs
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\SaveSystem.cs
+    projectPath: Assets\Code\SaveSystem.cs
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -76,12 +70,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: GachaGachaGame\Library\LastSceneManagerSetup.txt
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\LastSceneManagerSetup.txt
-    projectPath: Library\LastSceneManagerSetup.txt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: GachaGachaGame\Library\SceneVisibilityState.asset
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SceneVisibilityState.asset
     projectPath: Library\SceneVisibilityState.asset
@@ -97,18 +85,6 @@ MonoBehaviour:
   - path: GachaGachaGame\Library\SourceAssetDB
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SourceAssetDB
     projectPath: Library\SourceAssetDB
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: GachaGachaGame\UserSettings\EditorUserSettings.asset
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\UserSettings\EditorUserSettings.asset
-    projectPath: UserSettings\EditorUserSettings.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: GachaGachaGame\UserSettings\Layouts\default-2022.dwlt
-    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\UserSettings\Layouts\default-2022.dwlt
-    projectPath: UserSettings\Layouts\default-2022.dwlt
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
