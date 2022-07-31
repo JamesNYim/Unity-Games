@@ -4,11 +4,18 @@ using UnityEngine;
 
 namespace Game
 {
-    public class ThePlayer : MonoBehaviour
+    public class Player : MonoBehaviour
     {
-        public Character characterInventory = new Character();
+        public Character characterInventory;
         public int level;
         public string playerName; 
+
+        public Player(string name)
+        {
+            characterInventory = new Character();
+            level = 0;
+            playerName = name;
+        }
 
         public void giveCharacter(string characterName, int amount)
         {

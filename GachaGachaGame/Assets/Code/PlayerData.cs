@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class PlayerData 
+namespace Game
 {
-    public int testNum;
-    public Hashtable characterInventory;
-
-    public PlayerData(Player player)
+    public class PlayerData 
     {
-        testNum = player.testNum;
-        characterInventory = player.characterInventory;
-    }
-}
+        public string playerName;
+        public int level;
+        public Dictionary<string, int> characterInventory;
+
+        public PlayerData(Player player)
+        {
+            level = player.level;
+            playerName = player.playerName;
+            characterInventory = player.characterInventory.getSet();
+        }
+    } 
+}  
+
+
 
 
