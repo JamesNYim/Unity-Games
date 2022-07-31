@@ -43,7 +43,7 @@ namespace Game
             }
         }
 
-        IEnumerator rollingCard(Player player)
+        IEnumerator rollingCard()
         {
             yield return new WaitForSeconds(timeToDisplay);
             cardDropRates();
@@ -69,7 +69,8 @@ namespace Game
                     droppedCardPrefab.name = ("cardPrefab");
 
                     //Giving the card
-                    player.giveCharacter(droppedCardPrefab.name, 1);
+                    
+                    
 
                 }
             }
