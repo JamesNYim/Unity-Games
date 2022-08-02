@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace Game
 {
-    public class Character : MonoBehaviour
+    public class Characters : MonoBehaviour
     {
         //variables
         private Dictionary<string, int> characterSet;
@@ -16,10 +17,12 @@ namespace Game
         }
 
         //Creating empty character set
-        public Character()
+        
+        public Characters()
         {
             characterSet = new Dictionary<string, int>();
         }
+        
 
         //getting the character set
         public Dictionary<string, int> getSet()
@@ -51,7 +54,7 @@ namespace Game
         }
 
         //Adding a character to character set
-        public void addCharacter(string characterName, int numOfCharacters) //Can i keep the Dictionart<>?
+        public void addCharacter(string characterName, int numOfCharacters) 
         {
             //Checking if the character is already in the set
             if (this.hasCharacter(characterName)) 
@@ -84,10 +87,6 @@ namespace Game
                 Debug.LogFormat("Character Name: {0}, Amount: {1}", character.Key, character.Value);
             }
         }
-
-        
-
-    
     }
 }
 

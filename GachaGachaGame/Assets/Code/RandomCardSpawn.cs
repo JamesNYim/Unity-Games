@@ -25,7 +25,8 @@ namespace Game
         private GameObject card;
         public Player player;
 
-        void cardDropRates()
+
+        private void cardDropRates()
         {
             //Getting spawn rates
             for (int i = 0; i < cardToSpawn.Length; i++)
@@ -43,17 +44,17 @@ namespace Game
             }
         }
 
-        IEnumerator rollingCard()
+        private IEnumerator rollingCard()
         {
             yield return new WaitForSeconds(timeToDisplay);
             cardDropRates();
             //Getting a random percent number
             int random = Random.Range(0, 100);
-            Debug.Log("randomNum: " + random);     
+            //Debug.Log("randomNum: " + random);     
             for (int i = 0; i < cardToSpawn.Length; i++)
             {
-                Debug.Log("currentCard minDropRate: " + cardToSpawn[i].minDropRate); 
-                Debug.Log("currentCard maxDropRate: " + cardToSpawn[i].maxDropRate); 
+                //Debug.Log("currentCard minDropRate: " + cardToSpawn[i].minDropRate); 
+                //Debug.Log("currentCard maxDropRate: " + cardToSpawn[i].maxDropRate); 
                 if (random >= cardToSpawn[i].minDropRate && random <= cardToSpawn[i].maxDropRate) //Checking which card is supposed to be spawned
                 {
                     //Variables
@@ -69,6 +70,9 @@ namespace Game
                     droppedCardPrefab.name = ("cardPrefab");
 
                     //Giving the card
+                    player.giveCharacter(card.name, 1);
+                    player.printCharacters();
+                    break;
                     
                     
 
@@ -78,7 +82,7 @@ namespace Game
 
         }  
 
-        void rollDisplay()
+        private void rollDisplay()
         {  
             int random = Random.Range(0, cardToSpawn.Length);
             //Variables
@@ -104,7 +108,7 @@ namespace Game
                     
         }
 
-        IEnumerator rollAnimation(Player player)
+        private IEnumerator rollAnimation(Player player)
         {
             hasRolled = false;
             Debug.Log("Started stopAnimation at: " + Time.time);
@@ -112,7 +116,7 @@ namespace Game
             animationDone = true;
             Debug.Log("Ended stopAnimation at: " + Time.time);
             Debug.Log("givingCard at: " + Time.time);
-            StartCoroutine(rollingCard(player));
+            StartCoroutine(rollingCard());
             
         }
 

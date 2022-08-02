@@ -6,13 +6,13 @@ namespace Game
 {
     public class Player : MonoBehaviour
     {
-        public Character characterInventory;
+        public Characters characterInventory;
         public int level;
         public string playerName; 
 
         public Player(string name)
         {
-            characterInventory = new Character();
+            characterInventory = new Characters();
             level = 0;
             playerName = name;
         }
@@ -26,6 +26,11 @@ namespace Game
         {
             characterInventory.deleteCharacter(characterName, amount);
         } 
+
+        public void printCharacters()
+        {
+            characterInventory.printSet();
+        }
     }   
 
 }
