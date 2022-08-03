@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
+<<<<<<< HEAD
   lastUpdatedAtString: 2022-08-02T14:30:09.801-07:00
   initializedAtString: 2022-08-02T12:56:41.010-07:00
   entries:
@@ -25,6 +26,20 @@ MonoBehaviour:
   - path: GachaGachaGame/Assets/Code/Characters.cs
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Assets/Code/Characters.cs
     projectPath: Assets/Code/Characters.cs
+=======
+  lastUpdatedAtString: 2022-07-31T01:01:45.725-07:00
+  initializedAtString: 2022-07-31T00:45:08.036-07:00
+  entries:
+  - path: GachaGachaGame\Assets\Code\RandomCardSpawn.cs
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Assets\Code\RandomCardSpawn.cs
+    projectPath: Assets\Code\RandomCardSpawn.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: GachaGachaGame\Library\ArtifactDB
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+>>>>>>> parent of e9587cf (3:30am push)
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -40,6 +55,7 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+<<<<<<< HEAD
   - path: GachaGachaGame/Library/APIUpdater/project-dependencies.graph
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Library/APIUpdater/project-dependencies.graph
     projectPath: Library/APIUpdater/project-dependencies.graph
@@ -49,6 +65,11 @@ MonoBehaviour:
   - path: GachaGachaGame/Library/ArtifactDB
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Library/ArtifactDB
     projectPath: Library/ArtifactDB
+=======
+  - path: GachaGachaGame\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+>>>>>>> parent of e9587cf (3:30am push)
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -58,6 +79,7 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+<<<<<<< HEAD
   - path: GachaGachaGame/Library/EditorUserBuildSettings.asset
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Library/EditorUserBuildSettings.asset
     projectPath: Library/EditorUserBuildSettings.asset
@@ -145,6 +167,17 @@ MonoBehaviour:
   - path: GachaGachaGame/ProjectSettings/ProjectVersion.txt
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/ProjectSettings/ProjectVersion.txt
     projectPath: ProjectSettings/ProjectVersion.txt
+=======
+  - path: GachaGachaGame\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: GachaGachaGame\Library\SourceAssetDB
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SourceAssetDB
+    projectPath: Library\SourceAssetDB
+>>>>>>> parent of e9587cf (3:30am push)
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
