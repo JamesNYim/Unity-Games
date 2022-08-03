@@ -25,6 +25,25 @@ namespace Game
         private GameObject card;
         public Player player;
 
+        //Button Behavior variables
+        public float cooldownTime = 10f;
+        private bool cooldown = false;
+
+        //Button Behavior
+        public void OnButtonPress()
+        {
+            if (cooldown == false)
+            {
+                rolling();
+                Invoke("ResetCooldown", cooldownTime);
+                cooldown = true;
+            }
+        }
+
+        private void ResetCooldown()
+        {
+            cooldown = false;
+        }
 
         private void cardDropRates()
         {
@@ -120,7 +139,7 @@ namespace Game
             
         }
 
-        public void rolling()
+        private void rolling()
         {
             if (hasRolled)
             {
