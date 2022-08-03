@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cacheType: 6
 <<<<<<< HEAD
+<<<<<<< HEAD
   lastUpdatedAtString: 2022-08-02T14:30:09.801-07:00
   initializedAtString: 2022-08-02T12:56:41.010-07:00
   entries:
@@ -27,6 +28,8 @@ MonoBehaviour:
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Assets/Code/Characters.cs
     projectPath: Assets/Code/Characters.cs
 =======
+=======
+>>>>>>> parent of e9587cf (3:30am push)
   lastUpdatedAtString: 2022-07-31T01:01:45.725-07:00
   initializedAtString: 2022-07-31T00:45:08.036-07:00
   entries:
@@ -56,6 +59,7 @@ MonoBehaviour:
     indexStatus: 0
     workTreeStatus: 3
 <<<<<<< HEAD
+<<<<<<< HEAD
   - path: GachaGachaGame/Library/APIUpdater/project-dependencies.graph
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Library/APIUpdater/project-dependencies.graph
     projectPath: Library/APIUpdater/project-dependencies.graph
@@ -66,6 +70,8 @@ MonoBehaviour:
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/Library/ArtifactDB
     projectPath: Library/ArtifactDB
 =======
+=======
+>>>>>>> parent of e9587cf (3:30am push)
   - path: GachaGachaGame\Library\gfu\cache\gitstatusentries.yaml
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\gfu\cache\gitstatusentries.yaml
     projectPath: Library\gfu\cache\gitstatusentries.yaml
@@ -168,6 +174,12 @@ MonoBehaviour:
     fullPath: /Users/jamesyim/Desktop/the-shops/the-coffee-shop/GachaGachaGame/ProjectSettings/ProjectVersion.txt
     projectPath: ProjectSettings/ProjectVersion.txt
 =======
+  - path: GachaGachaGame\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: GachaGachaGame\Library\SceneVisibilityState.asset
     fullPath: C:\Users\nop90\Desktop\the-boba-shop\the-coffee-shop\GachaGachaGame\Library\SceneVisibilityState.asset
     projectPath: Library\SceneVisibilityState.asset
