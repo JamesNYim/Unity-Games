@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void RollMenu()
+    public void LoadRollMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("RollingScene");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadInventoryMenu()
+    {
+        SceneManager.LoadScene("Inventory");
     }
 
     public void QuitGame()
