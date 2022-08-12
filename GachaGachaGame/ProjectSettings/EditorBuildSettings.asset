@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RollingScene.unity
     guid: 24254963914e23c4589c6f3aa903d9c8
+  - enabled: 1
+    path: Assets/Scenes/Inventory.unity
+    guid: 162dd7533c373d743a1db652affee56a
   m_configObjects: {}
