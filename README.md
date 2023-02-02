@@ -1,10 +1,10 @@
 # the-coffee-shop
 
-*Grab a latte and look at some games*
+*Lattes & Games*
 
 ## Description
 
-In this repository are some games that I have made
+Here are some games I have made
 
 ## Notes
 
