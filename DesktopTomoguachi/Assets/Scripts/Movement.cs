@@ -9,7 +9,8 @@ public class Movement : MonoBehaviour
     public float waitTime = 3;
 
     public Transform waypoint;
-
+    public Transform[] bounds; 
+    private int i;
     public float minX;
     public float maxX;
     public float minY;
@@ -18,7 +19,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         currentWaitTime = waitTime;
-        waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        waypointIndex = 0;
+        //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Determines where the player goes 
+        waypoint.position = bounds[waypointIndex].position;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -30,15 +33,21 @@ public class Movement : MonoBehaviour
         {
             if (currentWaitTime <= 0)
             {
-                waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // This gets a new position
+                waypoint.position = bounds[waypointIndex].position;
                 currentWaitTime = waitTime;
             }
             else
             {
                 currentWaitTime -= Time.deltaTime;
+                waypointIndex++;
             }
+        }
+        if (i > 3)
+        {
+            waypointIndex = 0;
         }
    }
 }
-// https://www.youtube.com/watch?v=jvtFUfJ6CP8 movement
+// https://www.youtube.com/watch?v=8eWbSN2T8TE Movement
 // https://youtu.be/RqgsGaMPZTw Transparent window
