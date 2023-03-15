@@ -22,4 +22,14 @@ public class Pet : MonoBehaviour
         hasEaten = data.hasEaten;
     }
 
+    void OnApplicationQuit()
+    {
+        savePet();
+    }
+
+    void Start()
+    {
+        loadPet();
+    }
+
 }
