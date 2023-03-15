@@ -16,10 +16,12 @@ public class Movement : MonoBehaviour
     public float minY;
     public float maxY;
 
+    private int waypointIndex = 0;
+
     void Start()
     {
         currentWaitTime = waitTime;
-        waypointIndex = 0;
+        
         //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Determines where the player goes 
         waypoint.position = bounds[waypointIndex].position;
     }
@@ -43,7 +45,7 @@ public class Movement : MonoBehaviour
                 waypointIndex++;
             }
         }
-        if (i > 3)
+        if (waypointIndex > 3)
         {
             waypointIndex = 0;
         }
