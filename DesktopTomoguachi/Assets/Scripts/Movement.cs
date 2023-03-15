@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5;
     private float currentWaitTime;
     public float waitTime = 3;
-
+    
     public Transform waypoint;
     public Transform[] bounds; 
     private int i;
@@ -17,13 +17,29 @@ public class Movement : MonoBehaviour
     public float maxY;
 
     private int waypointIndex = 0;
+    private float currentX = 0;
+    private float currentY = 0;
 
+    Vector2 newWaypoint()
+    {
+        return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+    }
     void Start()
     {
         currentWaitTime = waitTime;
         
         //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Determines where the player goes 
-        waypoint.position = bounds[waypointIndex].position;
+        waypoint.position = new Vector3(currentX, currentY);
+    }
+
+    void OnMouseOver()
+    {
+        waypoint.position = transform.position;
+    }
+
+    void OnMouseExit()
+    {
+        waypoint.position = newWaypoint();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -36,18 +52,13 @@ public class Movement : MonoBehaviour
             if (currentWaitTime <= 0)
             {
                 //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // This gets a new position
-                waypoint.position = bounds[waypointIndex].position;
+                waypoint.position = newWaypoint();
                 currentWaitTime = waitTime;
             }
             else
             {
                 currentWaitTime -= Time.deltaTime;
-                waypointIndex++;
             }
-        }
-        if (waypointIndex > 3)
-        {
-            waypointIndex = 0;
         }
    }
 }
