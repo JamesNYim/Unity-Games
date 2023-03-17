@@ -5,20 +5,22 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveSpeed = 5;
-    private float currentWaitTime;
-    public float waitTime = 3;
+    
     
     public Transform waypoint;
+    public GameObject pet;
     public Transform[] bounds; 
-    private int i;
     public float minX;
     public float maxX;
     public float minY;
     public float maxY;
+    public float minWait;
+    public float maxWait;
 
-    private int waypointIndex = 0;
     private float currentX = 0;
     private float currentY = 0;
+    private float currentWaitTime;
+    private float waitTime;
 
     Vector2 newWaypoint()
     {
@@ -26,15 +28,15 @@ public class Movement : MonoBehaviour
     }
     void Start()
     {
+        waitTime = Random.Range(minWait, maxWait);
         currentWaitTime = waitTime;
-        
-        //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Determines where the player goes 
         waypoint.position = new Vector3(currentX, currentY);
     }
 
     void OnMouseOver()
     {
         waypoint.position = transform.position;
+
     }
 
     void OnMouseExit()
@@ -53,6 +55,7 @@ public class Movement : MonoBehaviour
             {
                 //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // This gets a new position
                 waypoint.position = newWaypoint();
+                waitTime = Random.Range(minWait, maxWait);
                 currentWaitTime = waitTime;
             }
             else
