@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
         waypoint.position = new Vector3(currentX, currentY);
     }
 
+
     void OnMouseOver()
     {
         waypoint.position = transform.position;

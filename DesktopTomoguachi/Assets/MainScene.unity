@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  waitTime: 3
   waypoint: {fileID: 693466718}
+  pet: {fileID: 0}
   bounds:
   - {fileID: 971675583}
   - {fileID: 1119853754}
@@ -167,6 +167,8 @@ MonoBehaviour:
   maxX: 17
   minY: -9
   maxY: 9
+  minWait: 0
+  maxWait: 0
 --- !u!212 &47039141
 SpriteRenderer:
   m_ObjectHideFlags: 0
