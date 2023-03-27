@@ -67,7 +67,7 @@ public class PetBehavior : MonoBehaviour
         petStatus[status] = false;
     }
     // For when the pet is wandering
-    void wanderMovement()
+    private void wanderMovement()
     {
         transform.position = Vector2.MoveTowards(transform.position, waypoint.position, moveSpeed * Time.deltaTime);
 
@@ -76,7 +76,6 @@ public class PetBehavior : MonoBehaviour
         {
             if (currentWaitTime <= 0)
             {
-                //waypoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // This gets a new position
                 waypoint.position = newWaypoint();
                 waitTime = Random.Range(minWait, maxWait);
                 currentWaitTime = waitTime;
@@ -88,20 +87,26 @@ public class PetBehavior : MonoBehaviour
         }
     }
     // For when we want to idle the pet
-    void idleMovement()
+    private void idleMovement()
     {
         waypoint.position = transform.position;
     }
 
     // For when we are draging the pet
-    void dragMovement()
+    private void dragMovement()
     {
         Vector3 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
     }
 
+    private void botherMovement()
+    {
+        waypoint.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = Vector2.MoveTowards(transform.position, waypoint.position, moveSpeed * Time.deltaTime);
+    }
+
     // Finding a new waypoint
-    Vector2 newWaypoint()
+    private Vector2 newWaypoint()
     {
         return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }
@@ -150,6 +155,12 @@ public class PetBehavior : MonoBehaviour
         else if (getStatus() == "Dragging")
         {
             dragMovement();
+        }
+
+        // Bothering Behavior
+        else if (getStatus() == "Bothering")
+        {
+            botherMovement();
         }
     }
 }
