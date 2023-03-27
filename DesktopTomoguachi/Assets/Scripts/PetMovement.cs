@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PetMovement : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    
-    
+    // Public Variables
     public Transform waypoint;
-    public GameObject pet;
     public Transform[] bounds; 
+    public float moveSpeed;
     public float minX;
     public float maxX;
     public float minY;
@@ -17,15 +15,32 @@ public class Movement : MonoBehaviour
     public float minWait;
     public float maxWait;
 
+    // Private Variables
     private float currentX = 0;
     private float currentY = 0;
     private float currentWaitTime;
     private float waitTime;
 
+    // For when we want to idle the pet
+    void idleMovement()
+    {
+        waypoint.position = transform.position;
+    }
+
+    void dragMovement()
+    {
+        Vector3 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+
+    }
+
+    // Finding a new waypoint
     Vector2 newWaypoint()
     {
         return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }
+
+    // On Game start
     void Start()
     {
         waitTime = Random.Range(minWait, maxWait);
@@ -33,16 +48,26 @@ public class Movement : MonoBehaviour
         waypoint.position = new Vector3(currentX, currentY);
     }
 
-
+    // When mouse is over object
     void OnMouseOver()
     {
-        waypoint.position = transform.position;
-
+        idleMovement();
+        
+        print("Mouse is over");
     }
 
+    
+    void OnMouseDrag()
+    {
+        dragMovement();
+        print("Mouse is clicking");
+    }
+
+    // When Mouse exits the object
     void OnMouseExit()
     {
         waypoint.position = newWaypoint();
+        print("Mouse exit");
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -66,5 +91,3 @@ public class Movement : MonoBehaviour
         }
    }
 }
-// https://www.youtube.com/watch?v=8eWbSN2T8TE Movement
-// https://youtu.be/RqgsGaMPZTw Transparent window

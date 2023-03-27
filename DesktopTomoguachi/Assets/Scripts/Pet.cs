@@ -66,6 +66,7 @@ public class Pet : MonoBehaviour
         dict.Add("Interacting", false);
         dict.Add("Offscreen", false);
         dict.Add("Bothering", false);
+        dict.Add("Dragging" false);
     }
 
 }
