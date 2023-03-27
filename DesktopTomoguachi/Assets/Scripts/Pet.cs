@@ -7,7 +7,7 @@ public class Pet : MonoBehaviour
     public int xp;
     public int level;
     public bool hasEaten;
-    public Dictionary<string, bool> petStatus = new Dictionary<string, bool>();
+    
     
     public void savePet()
     {
@@ -20,33 +20,6 @@ public class Pet : MonoBehaviour
         xp = data.xp;
         level = data.level;
         hasEaten = data.hasEaten;
-
-        createStatusDict(petStatus); // Creating the dictionary of statuses
-    }
-
-    public string getStatus()
-    {
-        foreach(KeyValuePair<string, bool> status in petStatus)
-        {
-            if (status.Value)
-            {
-                return status.Key;
-            }
-        }
-        return null;
-    }
-
-    public void clearStatus()
-    {
-        foreach(KeyValuePair<string, bool> status in petStatus)
-        {
-            petStatus[status.Key] = false;
-        }
-    }
-
-    public void setStatus(string status)
-    {
-        petStatus[status] = true;
     }
 
     void OnApplicationQuit()
@@ -57,16 +30,6 @@ public class Pet : MonoBehaviour
     void Start()
     {
         loadPet();
-    }
-
-    private void createStatusDict(Dictionary<string, bool> dict)
-    {
-        dict.Add("Roaming", false);
-        dict.Add("Idle", false);
-        dict.Add("Interacting", false);
-        dict.Add("Offscreen", false);
-        dict.Add("Bothering", false);
-        dict.Add("Dragging" false);
     }
 
 }
