@@ -1,3 +1,8 @@
+/* 
+Learned from: Brackeys on Youtube
+Link: https://www.youtube.com/watch?v=XOjd_qU2Ido&t=952s
+*/
+
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;

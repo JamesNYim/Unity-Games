@@ -224,9 +224,8 @@ public class PetBehavior : MonoBehaviour
         currentWaitTime = waitTime;
         
         randomWaypoint();
-        setStatus("Idle"); // St
+        changeStatus(); 
         rigidbody = GetComponent<Rigidbody>(); 
-        
     }
 
     // When mouse is over object
@@ -234,9 +233,9 @@ public class PetBehavior : MonoBehaviour
     {
         //Debug.Log("On Mouse Over");
         mouseOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
-            //
+            Debug.Log("Pressed right click");
         }
         else
         {
@@ -247,28 +246,18 @@ public class PetBehavior : MonoBehaviour
     // When Mouse exits the object
     void OnMouseExit()
     {
-        //changeStatus();
+        changeStatus();
     }
 
     void OnMouseDown()
     {
-        mouseDownPos = transform.position;
+        
     }
 
     void OnMouseDrag()
     {
         setStatus("Dragging");
     }
-
-    void OnMouseUp()
-    {
-        
-        //Debug.Log("Mouse Is Up");
-        mouseUpPos = Input.mousePosition;
-        direction = mouseDownPos - mouseUpPos;
-
-    }
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -301,11 +290,6 @@ public class PetBehavior : MonoBehaviour
         else if (getStatus() == "Offscreen")
         {
 
-        }
-
-        if (rigidbody.velocity.y <= 0.5f && rigidbody.velocity.x <= 0.5f)
-        {
-            //Debug.Log("Stopped moving");
         }
         
     }
