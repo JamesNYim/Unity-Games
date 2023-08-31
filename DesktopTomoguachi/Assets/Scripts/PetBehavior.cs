@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TimeManager;
+
 
 public class PetBehavior : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PetBehavior : MonoBehaviour
     public Transform waypoint;
     public Transform[] bounds; 
     public float moveSpeed;
+    public float botherMult;
     public float minX;
     public float maxX;
     public float minY;
@@ -20,6 +23,12 @@ public class PetBehavior : MonoBehaviour
     private float currentY = 0;
     private float currentWaitTime;
     private float waitTime;
+    private Vector3 mouseOffset;
+    private Vector3 mouseDownPos;
+    private Vector3 mouseUpPos;
+    private Vector3 direction;
+    private TimeManager timeManager = new TimeManager();
+    private Rigidbody rigidbody;
 
     public Dictionary<string, bool> petStatus = new Dictionary<string, bool>();
     
@@ -32,6 +41,7 @@ public class PetBehavior : MonoBehaviour
         dict.Add("Offscreen", false);
         dict.Add("Bothering", false);
         dict.Add("Dragging", false);
+        dict.Add("Returning", false);
     }
    
     // Getting current behavior of pet
@@ -51,6 +61,10 @@ public class PetBehavior : MonoBehaviour
     public void setStatus(string status)
     {
         // If there is a status already
+        if (getStatus() == status)
+        {
+            return;
+        }
         if (getStatus() != null)
         {
             clearStatus(getStatus());
@@ -66,26 +80,77 @@ public class PetBehavior : MonoBehaviour
     {
         petStatus[status] = false;
     }
-    // For when the pet is wandering
-    private void wanderMovement()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, waypoint.position, moveSpeed * Time.deltaTime);
 
-        // Checking if we reached our destination
-        if (Vector2.Distance(transform.position, waypoint.position) < 0.2f) 
+    // Randomly change status based on percent
+    private void changeStatus()
+    {
+        int total = 0;
+        Dictionary<string, int> statePercents = new Dictionary<string, int>();
+        statePercents.Add("Wandering", 0);
+        statePercents.Add("Idle", 0);
+        statePercents.Add("Interacting", 0);
+        statePercents.Add("Offscreen", 0);
+        statePercents.Add("Bothering", 0);
+        statePercents.Add("Dragging", 0);
+        statePercents.Add("Returning", 0);
+
+        foreach(KeyValuePair<string, int> status in statePercents)
         {
-            if (currentWaitTime <= 0)
+            total += status.Value;
+        }
+        
+        int randomNumber = Random.Range(0, total);
+        foreach(KeyValuePair<string, int> status in statePercents)
+        {
+            if (randomNumber <= status.Value)
             {
-                waypoint.position = newWaypoint();
-                waitTime = Random.Range(minWait, maxWait);
-                currentWaitTime = waitTime;
+                setStatus(status.Key);
+                return;
             }
             else
+            {
+                randomNumber -= status.Value;
+            }
+        }
+    }
+
+    //Move to a position
+    private bool moveTowardsWaypoint(float timeToWait, float speed, float offset = .5f)
+    {
+        transform.position = Vector2.MoveTowards(transform.position, waypoint.position, speed * Time.deltaTime);
+
+        // Checking if we reached our destination
+        if (Vector2.Distance(transform.position, waypoint.position) < offset) 
+        {
+            if (currentWaitTime <= 0) // When we have waited long enough
+            {
+                currentWaitTime = timeToWait;
+                return true;
+            }
+            else // Continue waiting
             {
                 currentWaitTime -= Time.deltaTime;
             }
         }
+        return false;
     }
+
+    //Get a new wait time
+    private void setRandomWaitTime()
+    {
+        waitTime = Random.Range(minWait, maxWait);
+    }
+    // For when the pet is wandering
+    private void wanderMovement()
+    {
+        bool hasReached = moveTowardsWaypoint(waitTime, moveSpeed);
+        if (hasReached)
+        {
+            setRandomWaitTime();
+            randomWaypoint();
+        }
+    }
+
     // For when we want to idle the pet
     private void idleMovement()
     {
@@ -95,52 +160,127 @@ public class PetBehavior : MonoBehaviour
     // For when we are draging the pet
     private void dragMovement()
     {
-        Vector3 offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + mouseOffset;
     }
 
+    // Bother Movement
     private void botherMovement()
     {
+        //Need to figure out the z axis for the mouse if i feel like it
+        float botherSpeed = moveSpeed * botherMult;
         waypoint.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        bool hasReached = moveTowardsWaypoint(0, botherSpeed);
+
+    }
+
+    // Off Screen Movement
+    private void offscreenMovement()
+    {
         transform.position = Vector2.MoveTowards(transform.position, waypoint.position, moveSpeed * Time.deltaTime);
     }
 
-    // Finding a new waypoint
-    private Vector2 newWaypoint()
+    // Setting the waypoint()
+    private void setWaypoint(Vector2 coords)
     {
-        return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        waypoint.position = coords;
     }
+
+    // Finding a new waypoint
+    private void randomWaypoint()
+    {
+        waypoint.position  = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+    }
+
+    private void randomOutPoint()
+    {
+        float xSign = Random.Range(0, 1);
+        float ySign = Random.Range(0, 1);
+        float randX = Random.Range(maxX, maxX + 100);
+        float randY = Random.Range(maxY, maxY + 100);
+        if (xSign == 0)
+        {
+            randX = -randX;
+        }
+        if (ySign == 0)
+        {
+            randY = -randY;
+        }
+
+        waypoint.position = new Vector2(randX, randY);
+        print(waypoint.position);
+    }
+
 
     // On Game start
     void Start()
     {
+        //Initalizing tick system in PetBehavior class
+        TickManager.onTick += delegate(object sender, TickManager.OnTickEvent tickEvent) {
+            Debug.Log("Tick: " + tickEvent.tick);
+        };
         createStatusDict(petStatus); // Initalizing the pet status dictionary 
         
         waitTime = Random.Range(minWait, maxWait); // Setting wait time for wandering
         currentWaitTime = waitTime;
         
-        waypoint.position = newWaypoint();
-        setStatus("Wandering"); // Start of wandering
+        randomWaypoint();
+        setStatus("Idle"); // St
+        rigidbody = GetComponent<Rigidbody>(); 
+        
     }
 
     // When mouse is over object
     void OnMouseOver()
     {
-        setStatus("Idle");
+        //Debug.Log("On Mouse Over");
+        mouseOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetMouseButton(0))
+        {
+            //
+        }
+        else
+        {
+           setStatus("Idle");
+        }
     }
 
     // When Mouse exits the object
     void OnMouseExit()
     {
-        setStatus("Wandering");
+        //changeStatus();
+    }
+
+    void OnMouseDown()
+    {
+        mouseDownPos = transform.position;
+    }
+
+    void OnMouseDrag()
+    {
+        setStatus("Dragging");
+    }
+
+    void OnMouseUp()
+    {
+        
+        //Debug.Log("Mouse Is Up");
+        mouseUpPos = Input.mousePosition;
+        direction = mouseDownPos - mouseUpPos;
+
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
         // Wandering behavior
-        if (getStatus() == "Wandering")
+        if (getStatus() == "Dragging")
+        {
+            dragMovement();
+        }
+
+        else if (getStatus() == "Wandering")
         {
             wanderMovement();
         }
@@ -149,18 +289,24 @@ public class PetBehavior : MonoBehaviour
         else if (getStatus() == "Idle")
         {
             idleMovement();
-        }
-
-        // Deagging Behavior
-        else if (getStatus() == "Dragging")
-        {
-            dragMovement();
-        }
+        }        
 
         // Bothering Behavior
         else if (getStatus() == "Bothering")
         {
             botherMovement();
         }
+
+        // OffScreen Behavior
+        else if (getStatus() == "Offscreen")
+        {
+
+        }
+
+        if (rigidbody.velocity.y <= 0.5f && rigidbody.velocity.x <= 0.5f)
+        {
+            //Debug.Log("Stopped moving");
+        }
+        
     }
 }
