@@ -4,37 +4,21 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    public GameObject ui;
-    public GameObject Pet;
-
-    public void showUI()
+    private bool isOver;
+    
+    public bool isUIActive()
     {
-        ui.SetActive(true);
-        print("Showing UI");
+        return isOver;
     }
-
-    public void closeUI()
-    {
-        print("Closing UI");
-        ui.SetActive(false);
-    }
-
     void OnMouseOver()
     {
-        showUI();
-        print("Mouse over UI");
+        Debug.Log("Mouse entered UI");
+        isOver = true;
     }
-
     void OnMouseExit()
     {
-        closeUI();
-        print("Mouse exited UI");
-    }
-
-    void FixedUpdate()
-    {
-        ui.transform.position = transform.position;
-        print("UI: pos: " + ui.transform.position + " | " + transform.position + " : obj pos");
+        Debug.Log("Mouse exited UI");
+        isOver = false;
     }
 }
 

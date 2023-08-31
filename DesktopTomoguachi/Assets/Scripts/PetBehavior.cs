@@ -7,6 +7,7 @@ using static TimeManager;
 public class PetBehavior : MonoBehaviour
 {
     // Public Variables
+    public GameObject UIMenu;
     public Transform waypoint;
     public Transform[] bounds; 
     public float moveSpeed;
@@ -235,7 +236,7 @@ public class PetBehavior : MonoBehaviour
         mouseOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButton(1))
         {
-            Debug.Log("Pressed right click");
+            UIMenu.SetActive(true);
         }
         else
         {
@@ -246,26 +247,30 @@ public class PetBehavior : MonoBehaviour
     // When Mouse exits the object
     void OnMouseExit()
     {
+        UIMenu.SetActive(false);
+        setStatus("Idle");
         changeStatus();
+    
     }
 
-    void OnMouseDown()
+    void OnMouseUp()
     {
-        
+        changeStatus();
     }
 
     void OnMouseDrag()
     {
+        Debug.Log("OnMouseDrag");
         setStatus("Dragging");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         // Wandering behavior
         if (getStatus() == "Dragging")
         {
+            Debug.Log("Is dragging");
             dragMovement();
         }
 
