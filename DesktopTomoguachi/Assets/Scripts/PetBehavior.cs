@@ -7,6 +7,7 @@ using static TimeManager;
 public class PetBehavior : MonoBehaviour
 {
     // Public Variables
+    public GameObject UI;
     public Transform waypoint;
     public Transform[] bounds; 
     public float moveSpeed;
@@ -42,6 +43,7 @@ public class PetBehavior : MonoBehaviour
         dict.Add("Bothering", false);
         dict.Add("Dragging", false);
         dict.Add("Returning", false);
+        dict.Add("UI", false);
     }
    
     // Getting current behavior of pet
@@ -72,7 +74,7 @@ public class PetBehavior : MonoBehaviour
         
         // Setting the status
         petStatus[status] = true;
-        //print("Set: " + status + " to " + petStatus[status]);
+        print("Set: " + status + " to " + petStatus[status]);
     }
 
     // Clearing a status of the pet
@@ -86,11 +88,11 @@ public class PetBehavior : MonoBehaviour
     {
         int total = 0;
         Dictionary<string, int> statePercents = new Dictionary<string, int>();
-        statePercents.Add("Wandering", 0);
+        statePercents.Add("Wandering", 50);
         statePercents.Add("Idle", 0);
         statePercents.Add("Interacting", 0);
         statePercents.Add("Offscreen", 0);
-        statePercents.Add("Bothering", 0);
+        statePercents.Add("Bothering", 50);
         statePercents.Add("Dragging", 0);
         statePercents.Add("Returning", 0);
 
@@ -170,6 +172,12 @@ public class PetBehavior : MonoBehaviour
         float botherSpeed = moveSpeed * botherMult;
         waypoint.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         bool hasReached = moveTowardsWaypoint(0, botherSpeed);
+
+    }
+
+    // UI Movement
+    private void uiMovement()
+    {
 
     }
 
@@ -258,6 +266,13 @@ public class PetBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (UI.activeSelf)
+        {
+            print("UI is active");
+            setWaypoint(UI.transform.position);
+            moveTowardsWaypoint(0, moveSpeed);
+        }
         // Wandering behavior
         if (getStatus() == "Dragging")
         {
