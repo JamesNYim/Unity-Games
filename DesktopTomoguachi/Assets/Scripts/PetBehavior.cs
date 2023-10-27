@@ -7,7 +7,6 @@ using static TimeManager;
 public class PetBehavior : MonoBehaviour
 {
     // Public Variables
-    public GameObject UIMenu;
     public Transform waypoint;
     public Transform[] bounds; 
     public float moveSpeed;
@@ -73,7 +72,7 @@ public class PetBehavior : MonoBehaviour
         
         // Setting the status
         petStatus[status] = true;
-        print("Set: " + status + " to " + petStatus[status]);
+        //print("Set: " + status + " to " + petStatus[status]);
     }
 
     // Clearing a status of the pet
@@ -234,20 +233,12 @@ public class PetBehavior : MonoBehaviour
     {
         //Debug.Log("On Mouse Over");
         mouseOffset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(1))
-        {
-            UIMenu.SetActive(true);
-        }
-        else
-        {
-           setStatus("Idle");
-        }
+        setStatus("Idle");
     }
 
     // When Mouse exits the object
     void OnMouseExit()
     {
-        UIMenu.SetActive(false);
         setStatus("Idle");
         changeStatus();
     
@@ -260,7 +251,7 @@ public class PetBehavior : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Debug.Log("OnMouseDrag");
+        //Debug.Log("OnMouseDrag");
         setStatus("Dragging");
     }
 
@@ -270,7 +261,7 @@ public class PetBehavior : MonoBehaviour
         // Wandering behavior
         if (getStatus() == "Dragging")
         {
-            Debug.Log("Is dragging");
+            //Debug.Log("Is dragging");
             dragMovement();
         }
 

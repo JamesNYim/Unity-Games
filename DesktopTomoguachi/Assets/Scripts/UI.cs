@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    private bool isOver;
+
+    public GameObject menu;
+    public void toggleMenu()
+    {
+        if (menu != null)
+        {
+            
+            menu.SetActive(!menu.activeSelf);
+        }
+    }
+    public void feedPet()
+    {
+        Debug.Log("Feeding");
+    }
+
     
-    public bool isUIActive()
-    {
-        return isOver;
-    }
-    void OnMouseOver()
-    {
-        Debug.Log("Mouse entered UI");
-        isOver = true;
-    }
-    void OnMouseExit()
-    {
-        Debug.Log("Mouse exited UI");
-        isOver = false;
-    }
 }
 
    
