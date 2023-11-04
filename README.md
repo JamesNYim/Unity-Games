@@ -1,10 +1,10 @@
-# the-coffee-shop
+# Unity Games
 
-*Lattes & Games*
+*Projects Ive made in Unity*
 
 ## Description
 
-Here are some games I have made
+Here are some games I have made in Unity
 
 ## Notes
 
